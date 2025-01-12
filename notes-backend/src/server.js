@@ -1,9 +1,18 @@
 const express = require('express');
+const mongoose = require('mongoose');
 
 const app = express();
+const port = process.env.PORT;
 
 app.get('/', (req, res) => res.json({ message: 'Hello from notes!' }));
 
-app.listen(3001, () => {
-  console.log('Notes listening on port 3001');
-});
+mongoose
+  .connect(process.env.DB_URL)
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Notes listening on port ${port}`);
+    });
+  })
+  .catch((err) => {
+    console.error('Something went wrong!!!');
+  });
