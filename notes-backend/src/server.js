@@ -4,7 +4,9 @@ const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT;
 
-app.get('/', (req, res) => res.json({ message: 'Hello from notes!' }));
+app.get('/', (req, res) =>
+  res.json({ message: 'Hello from notes. Great app' })
+);
 
 mongoose
   .connect(process.env.DB_URL)
