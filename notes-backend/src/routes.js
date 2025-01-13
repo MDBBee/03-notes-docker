@@ -41,7 +41,7 @@ noteRouter.post('/', async (req, res) => {
         } else {
           console.error({
             message:
-              'Error verifying the notebook ID. Upstream notebooks service not available. Storing note with provided ID for later validation.',
+              'Error verifying the notebook ID. Upstream notebooks service not available. Storing note with provided ID for later validation, will be removed if not valid.',
             notebookId,
             error: err.message,
           });
