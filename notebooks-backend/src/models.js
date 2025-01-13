@@ -17,8 +17,8 @@ const NotebookSchema = new Schema(
   { timestamps: true }
 );
 
-const NoteBook = mongoose.model('Notebook', NotebookSchema);
+const Notebook = mongoose.model('Notebook', NotebookSchema);
 
 module.exports = {
-  NoteBook,
+  Notebook,
 };
